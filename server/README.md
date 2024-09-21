@@ -64,8 +64,8 @@ Before setting up the project, ensure you have the following installed:
      ```sql
      -- Users Table
      CREATE TABLE Users (
-       id CHAR(36) PRIMARY KEY,
-       provider_id VARCHAR(255) NOT NULL,
+       id CHAR(36) PRIMARY KEY, -- UUID in MySQL is often stored as a CHAR(36)
+       provider_id VARCHAR(255) NOT NULL UNIQUE, -- ID from the identity provider (AWS Cognito or Okta)
        username VARCHAR(255) NOT NULL,
        email VARCHAR(255) NOT NULL UNIQUE,
        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -74,15 +74,17 @@ Before setting up the project, ensure you have the following installed:
 
      -- Favourites Table
      CREATE TABLE Favourites (
-       id CHAR(36) PRIMARY KEY,
-       user_id CHAR(36) NOT NULL,
-       movie_id BIGINT NOT NULL,
+       id CHAR(36) PRIMARY KEY, -- UUID for favorite entry
+       user_id CHAR(36) NOT NULL, -- Foreign key referencing Users(id)
+       movie_id BIGINT NOT NULL, -- Foreign key referencing Movies(id)
        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-       FOREIGN KEY (user_id) REFERENCES Users(id)
+       FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE, -- Delete user's favorites if the user is deleted
+       FOREIGN KEY (movie_id) REFERENCES Movies(id), -- Ensure movie exists
+       UNIQUE KEY (user_id, movie_id) -- Prevent user from adding the same movie multiple times
      );
 
      CREATE TABLE Movies (
-       id BIGINT PRIMARY KEY,
+       id BIGINT PRIMARY KEY, -- Movie ID from external API (TMDb)
        title VARCHAR(255) NOT NULL,
        release_date DATE,
        overview TEXT,

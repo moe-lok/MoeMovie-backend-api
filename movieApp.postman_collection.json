@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "0419efa6-7f4c-4e63-a2cc-84dc6597f972",
+		"name": "movieApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7796465"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"test2\",\r\n  \"email\": \"kisaw17744@ofionk.com\",\r\n  \"password\": \"YourPassword@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kisaw17744@ofionk.com\",\r\n  \"password\": \"YourPassword@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kisaw17744@ofionk.com\",\r\n  \"code\": \"328151\" // The verification code sent via email\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/verify-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"verify-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJjOENMTGhDVUhsWlNXdlZzV2JFVWY0bEM2T2lQMFJuVVgxVUdLWmp4UnlrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMWZiNzU4MC1hMDgxLTcwNzctNGFiMy1jYzE2OTlmOGJjMjIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfZzhOaXVHUlpnIiwiY29nbml0bzp1c2VybmFtZSI6ImUxZmI3NTgwLWEwODEtNzA3Ny00YWIzLWNjMTY5OWY4YmMyMiIsIm9yaWdpbl9qdGkiOiIxNmFlMzEyMC1mN2I2LTRmYTctODI4OC1jZTgzZDQxMjhlNTUiLCJhdWQiOiI0MzNwdWtjbXJlaTNrbmU5NjIzcnZwYXVzMSIsImV2ZW50X2lkIjoiZjE3MWQwNzUtOTA1Yy00NmI5LTgxMTktYTQwYTg3ODQxMTQyIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MjY5MTIwMDMsIm5hbWUiOiJ0ZXN0MiIsImV4cCI6MTcyNjkxNTYwMywiaWF0IjoxNzI2OTEyMDAzLCJqdGkiOiIzNWYwNzJlNC0yNjkyLTQ2ZDQtOWMzZS0yMTMxMTVlMTNjMWYiLCJlbWFpbCI6Imtpc2F3MTc3NDRAb2Zpb25rLmNvbSJ9.SZpMw3BtWQKFRYnw4aMjl1MIIrO9u2CiuvgeNeVelB8pR1Z2FYPYg8YdMgPK8JaH0O5N_B1M3Ao2DgQuzU1f_2MR9FHUcpysn7uH1QB3pl5aYEvWPtyb96wgUitU6tTxkpxmErhGc8PWCCd47MzAwz3Sz_9KIKFc68MI_L6lKQDA8NdkjF9m2Ec_73if3VMGjAi0C-NI8bqxJ7jnDBgq60dRWd94ntSVlW9WN9-TtQFr0kuPDXamkZHvpM0D1kGLHCDGzLdYd_OOIn0IGrY2j0YWY36tkTbt_3f7FSWX8eUCTmM5htaRA9Q4pLSU2rSqUaeRVFdVlKnY5RHOENGM3A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/search?q=Inception",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Inception"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to fav",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJjOENMTGhDVUhsWlNXdlZzV2JFVWY0bEM2T2lQMFJuVVgxVUdLWmp4UnlrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMWZiNzU4MC1hMDgxLTcwNzctNGFiMy1jYzE2OTlmOGJjMjIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfZzhOaXVHUlpnIiwiY29nbml0bzp1c2VybmFtZSI6ImUxZmI3NTgwLWEwODEtNzA3Ny00YWIzLWNjMTY5OWY4YmMyMiIsIm9yaWdpbl9qdGkiOiI5MmMzYmRlNi1kMjcxLTRjYjMtYTE0NS1mZjZhMjA4NjQzYTUiLCJhdWQiOiI0MzNwdWtjbXJlaTNrbmU5NjIzcnZwYXVzMSIsImV2ZW50X2lkIjoiZTZmZTdlOGEtMjA2OC00YTI2LWFjNWQtZjljMTE3NjNmOTBlIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MjY4OTI2MDgsIm5hbWUiOiJ0ZXN0MiIsImV4cCI6MTcyNjg5NjIwOCwiaWF0IjoxNzI2ODkyNjA4LCJqdGkiOiI3YTM4YjU5ZC04Yzg5LTQ5NzMtOWFjYy1iYTFlMjgxODBkZDgiLCJlbWFpbCI6Imtpc2F3MTc3NDRAb2Zpb25rLmNvbSJ9.YjExunbVxogdyHRrZyMJ5Gg7vsJ-KKzbFxKhx1a6CpA2pjzKjIJbyehrHK7IiLKxxtXFYs5PVo-AZMTxf7hLCpeuf3sX5XjvMtDnbi45E_1qx0uXFZKKkgnUtXHJ1Gp-m62zL8Fah7ckCJ7_uAiM3dfAYw1goyOrkwVTBQRIOigxadtFQs93WfA1cH_-uAxe7dYmOWn3S5l6s_KPgryrjiP-5VaTRf1emz0fLl0x0XqzNwJIGWWDB4yA9ctMyFR33JV-tSZpTaucu0FFk6_BKO2HRIGtNr-HRuumot4oTMlb8kva0s2o1jIJHNHYYmgIoW5Ya65pZJo9ndRAEE4S6w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movieId\": 920342  // The ID of the movie returned from TMDb API (e.g., Inception's ID)\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get fav movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJjOENMTGhDVUhsWlNXdlZzV2JFVWY0bEM2T2lQMFJuVVgxVUdLWmp4UnlrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMWZiNzU4MC1hMDgxLTcwNzctNGFiMy1jYzE2OTlmOGJjMjIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfZzhOaXVHUlpnIiwiY29nbml0bzp1c2VybmFtZSI6ImUxZmI3NTgwLWEwODEtNzA3Ny00YWIzLWNjMTY5OWY4YmMyMiIsIm9yaWdpbl9qdGkiOiI5MmMzYmRlNi1kMjcxLTRjYjMtYTE0NS1mZjZhMjA4NjQzYTUiLCJhdWQiOiI0MzNwdWtjbXJlaTNrbmU5NjIzcnZwYXVzMSIsImV2ZW50X2lkIjoiZTZmZTdlOGEtMjA2OC00YTI2LWFjNWQtZjljMTE3NjNmOTBlIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MjY4OTI2MDgsIm5hbWUiOiJ0ZXN0MiIsImV4cCI6MTcyNjg5NjIwOCwiaWF0IjoxNzI2ODkyNjA4LCJqdGkiOiI3YTM4YjU5ZC04Yzg5LTQ5NzMtOWFjYy1iYTFlMjgxODBkZDgiLCJlbWFpbCI6Imtpc2F3MTc3NDRAb2Zpb25rLmNvbSJ9.YjExunbVxogdyHRrZyMJ5Gg7vsJ-KKzbFxKhx1a6CpA2pjzKjIJbyehrHK7IiLKxxtXFYs5PVo-AZMTxf7hLCpeuf3sX5XjvMtDnbi45E_1qx0uXFZKKkgnUtXHJ1Gp-m62zL8Fah7ckCJ7_uAiM3dfAYw1goyOrkwVTBQRIOigxadtFQs93WfA1cH_-uAxe7dYmOWn3S5l6s_KPgryrjiP-5VaTRf1emz0fLl0x0XqzNwJIGWWDB4yA9ctMyFR33JV-tSZpTaucu0FFk6_BKO2HRIGtNr-HRuumot4oTMlb8kva0s2o1jIJHNHYYmgIoW5Ya65pZJo9ndRAEE4S6w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove fav",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJjOENMTGhDVUhsWlNXdlZzV2JFVWY0bEM2T2lQMFJuVVgxVUdLWmp4UnlrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMWZiNzU4MC1hMDgxLTcwNzctNGFiMy1jYzE2OTlmOGJjMjIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfZzhOaXVHUlpnIiwiY29nbml0bzp1c2VybmFtZSI6ImUxZmI3NTgwLWEwODEtNzA3Ny00YWIzLWNjMTY5OWY4YmMyMiIsIm9yaWdpbl9qdGkiOiI5MmMzYmRlNi1kMjcxLTRjYjMtYTE0NS1mZjZhMjA4NjQzYTUiLCJhdWQiOiI0MzNwdWtjbXJlaTNrbmU5NjIzcnZwYXVzMSIsImV2ZW50X2lkIjoiZTZmZTdlOGEtMjA2OC00YTI2LWFjNWQtZjljMTE3NjNmOTBlIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MjY4OTI2MDgsIm5hbWUiOiJ0ZXN0MiIsImV4cCI6MTcyNjg5NjIwOCwiaWF0IjoxNzI2ODkyNjA4LCJqdGkiOiI3YTM4YjU5ZC04Yzg5LTQ5NzMtOWFjYy1iYTFlMjgxODBkZDgiLCJlbWFpbCI6Imtpc2F3MTc3NDRAb2Zpb25rLmNvbSJ9.YjExunbVxogdyHRrZyMJ5Gg7vsJ-KKzbFxKhx1a6CpA2pjzKjIJbyehrHK7IiLKxxtXFYs5PVo-AZMTxf7hLCpeuf3sX5XjvMtDnbi45E_1qx0uXFZKKkgnUtXHJ1Gp-m62zL8Fah7ckCJ7_uAiM3dfAYw1goyOrkwVTBQRIOigxadtFQs93WfA1cH_-uAxe7dYmOWn3S5l6s_KPgryrjiP-5VaTRf1emz0fLl0x0XqzNwJIGWWDB4yA9ctMyFR33JV-tSZpTaucu0FFk6_BKO2HRIGtNr-HRuumot4oTMlb8kva0s2o1jIJHNHYYmgIoW5Ya65pZJo9ndRAEE4S6w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/favorites/489932",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites",
+						"489932"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movie details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJraWQiOiJjOENMTGhDVUhsWlNXdlZzV2JFVWY0bEM2T2lQMFJuVVgxVUdLWmp4UnlrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlMWZiNzU4MC1hMDgxLTcwNzctNGFiMy1jYzE2OTlmOGJjMjIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfZzhOaXVHUlpnIiwiY29nbml0bzp1c2VybmFtZSI6ImUxZmI3NTgwLWEwODEtNzA3Ny00YWIzLWNjMTY5OWY4YmMyMiIsIm9yaWdpbl9qdGkiOiIyNDJhYTVkMS03MTBiLTQwN2MtYjFmMS04MGQ2OGY4ZDQzMGIiLCJhdWQiOiI0MzNwdWtjbXJlaTNrbmU5NjIzcnZwYXVzMSIsImV2ZW50X2lkIjoiZjM1MDhmNjctODVmMi00NDU4LTgwYTMtMGRlNTBiZGRkYzI1IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MjY5MTc0OTgsIm5hbWUiOiJ0ZXN0MiIsImV4cCI6MTcyNjkyMTA5OCwiaWF0IjoxNzI2OTE3NDk4LCJqdGkiOiJlNzUxNDUxZi02NjlkLTQ0NTAtYjA4NS1jMDliMzg4MjY3YjEiLCJlbWFpbCI6Imtpc2F3MTc3NDRAb2Zpb25rLmNvbSJ9.TIzifJCyjaR0KkWl5SKlxu0I3WA29E_geEUfb85HVJ37AG28J1cWEdOGfWS9Rr3DQAmUius6k5yE6aS1T4v5AuWonF1uFtsuP3H8Rh1KiWIcJrQNTflQEbclt3DHtKjm1kjNpzYEh0yqW3dKbkLxJvsSKW0tZHqC8SRmHyHszR9INQt6COjaRcuOhDxbaO-5luOXDGw4vHoSbIrdUYkMEdrcJm1qoJyh5ejR95BAM_-XjZu_PCulHj1bss7GDH_Fd6iPXBWrzMpD8zqg8j-8g6OrfhfG3I7jbK8lb-0aMEOK63m4dCbRF40lNTGIrISUWoIXknFTuvNDV-ujgnUZqQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/920342",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"920342"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
